@@ -9,11 +9,9 @@ function App() {
     <div className="App">
       <div className='Overlay'>
       <header className="App-header">
-      <TopBar></TopBar>
+        <TopBar />
       </header>
-      
       </div>
-      
     </div>
     );
 }

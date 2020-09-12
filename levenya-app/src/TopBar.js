@@ -1,12 +1,13 @@
-import React from 'react'
-import Style from 'style-it'
+import React, {useState} from 'react';
+import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
+import {getTests} from "./actions";
+import './topbar.css'
 const styles = {
     topBar: {
         position: 'fixed',
         width: '100%' ,
         zIndex: '5000',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-        transition: 'all 0.5s ease',
         background: 'none',
         color: '#999',
         opacity: '0.92',
@@ -18,15 +19,15 @@ const styles = {
         flexDirection: 'row',
         width: '90%',
         justifyContent: 'space-between',
-        
+
         background: 'none',
         color: '#999'
       },
       topBarLeft:{
-       
+
       },
       wrapper: {
-        
+
       },
       header: {
         position: 'fixed',
@@ -36,21 +37,28 @@ const styles = {
         '&::before':{
           content: '',
           position: 'absolute',
-          
+
           top:'0',
           left:'0',
           width: '100%' ,
           height:'100%',
           backgroundСolor: 'black'
         }
-       
-      
+
+
       }
 }
-function TopBar(){
+function TopBar({test,getTests}){
+    console.log(test)
+    const [email, setEmail] = useState('')
+    const send = (e) => {
+        console.log(email)
+        e.preventDefault();
+        getTests(email)
+    }
     return (
-      
-      <div className='wrapper' style={styles.wrapper}>
+
+      <div className='wrapper topbar' style={styles.wrapper}>
         <header className='header' style={styles.header}>
           <div className='container' style={styles.container}>
             <div className='header__body' style={styles.header__body}>
@@ -111,8 +119,26 @@ The jQuery team is constantly working to improve the code. Each commit to the Gi
             </div>
           </div>
         </div>
+          <form>
+              <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+              />
+              <button onClick={send} >Send</button>
+          </form>
       </div>
-       
+
+
       )
 }
-export default TopBar
+const mapStateToProps = store => ({
+    test:store.test.data
+});
+
+const mapDispatch = dispatch => bindActionCreators({
+  getTests,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatch)(TopBar);
