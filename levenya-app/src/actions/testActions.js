@@ -16,12 +16,13 @@ const onTestError = error => ({
 });
 
 export const getTests = email => dispatch => {
-    const eemail = email;
-    console.log(eemail);
+    var mail = JSON.stringify({email:email, name: "NAME"});
+    console.log(mail);
     dispatch(onTestRequest());
     fetch('http://localhost:8080/test', {
         method: 'POST',
-        body: eemail
+        headers: {'Content-Type': 'application/json'},
+        body: mail
     })
     .then(res => dispatch(onTestRequest(res.data.email)))
     .catch(err => {
