@@ -3,17 +3,17 @@ import {Link} from "react-router-dom"
 import '../headerBar/headerBar.css'
 
 function HeaderBar(){
-    return <nav>
-    <Link to="/main">Главная</Link>
-    <Link to='/aboutUs'>Про нас</Link>
-    <Link to='/ourServices'>Наши услуги</Link>
-    <Link to='/shares'>Акции</Link>
-    <Link to='/portfolio'>Портфолио</Link>
-    <Link to='/blog'>Блог</Link>
-    <Link to='/reviews'>Отзывы</Link>
-    <Link to='/contacts'>Контакты</Link>
-    <Link to='/adminpanel'>Админ</Link>
-</nav>
+    return <ul>
+    <li><a href="/">Home</a></li>
+  <li><a href="/aboutUs">About</a></li>
+  <li><a href="/ourServices">Service</a></li>
+  <li><a href="/shares">Shares</a></li>
+  <li><a href="/portfolio">Portfolio</a></li>
+  <li><a href="/blog">Blog</a></li>
+  <li><a href="/reviews">Reviews</a></li>
+  <li><a href="/contacts">Contacts</a></li>
+  <li><a href="/adminpanel">adminpanel</a></li>
+</ul>
 }
        
     

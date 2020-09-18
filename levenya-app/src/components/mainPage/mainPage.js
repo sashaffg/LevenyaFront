@@ -7,11 +7,9 @@ import Footer from '../../components/footerBar/footer'
 function MainPage(){
     return(
         <div className='wrapper'>
-            <header>
-                <HeaderBar></HeaderBar>
-            </header>
             <body>
             <div className='videoAndText'>
+            <HeaderBar></HeaderBar>
                 <video className='videoAndText__video' autoPlay loop muted>
                     <source src={sample} type='video/mp4' />
                 </video>
