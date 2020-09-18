@@ -1,0 +1,24 @@
+
+/* Add some content at the bottom of the video/page */
+.videoAndText__text {
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    
+}
+
+.videoAndText__video{
+    width: 100%;
+    height: auto;
+    margin: 0 auto; 
+   
+}
+.videoAndText{
+   position: relative;
+   text-align: left;
+   color: #f1f1f1;
+}
