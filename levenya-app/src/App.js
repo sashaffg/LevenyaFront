@@ -22,7 +22,7 @@ class App extends Component{
     return(
       <div className="App">
         <Switch>
-          <Route history={history} path='/main' component={MainPage}/>
+          <Route history={history} path='/' component={MainPage}/>
           <Route history={history} path='/aboutUs' component={AboutUs}/>
           <Route history={history} path='/ourServices' component={OurServices}/>
           <Route history={history} path='/shares' component={Shares}/>
